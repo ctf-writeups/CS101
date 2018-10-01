@@ -110,7 +110,7 @@ int main(int argc, char **argv){
 	target.sin_port = htons(atoi(argv[4]));
 
 	while(TRUE){
-			if(sendto(sock_fd, sendbuf, sizeof(struct iphdr) + sizeof(struct tcphdr), 0, (struct sockaddr *)&target, sizeof(target)) == -1){
+		if(sendto(sock_fd, sendbuf, sizeof(struct iphdr) + sizeof(struct tcphdr), 0, (struct sockaddr *)&target, sizeof(target)) == -1){
 			fprintf(stderr, "%s\n", strerror(errno));
 			exit(7);
 		}
